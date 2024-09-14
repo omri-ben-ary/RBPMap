@@ -1,0 +1,95 @@
+\hypertarget{heap_8h_source}{}\doxysection{heap.\+h}
+\label{heap_8h_source}\index{ViennaRNA/datastructures/heap.h@{ViennaRNA/datastructures/heap.h}}
+\mbox{\hyperlink{heap_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VIENNA\_RNA\_PACKAGE\_HEAP\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VIENNA\_RNA\_PACKAGE\_HEAP\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ VRNA\_WARN\_DEPRECATED}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#\ if\ defined(DEPRECATED)}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#\ \ \ undef\ DEPRECATED}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#\ endif}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#\ if\ defined(\_\_clang\_\_)}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#\ \ define\ DEPRECATED(func,\ msg)\ func\ \_\_attribute\_\_\ ((deprecated("{}"{}},\ msg)))}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#\ elif\ defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#\ \ define\ DEPRECATED(func,\ msg)\ func\ \_\_attribute\_\_\ ((deprecated(msg)))}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#\ else}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#\ \ define\ DEPRECATED(func,\ msg)\ func}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#\ endif}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#\ define\ DEPRECATED(func,\ msg)\ func}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }vrna\_heap\_s\ *\mbox{\hyperlink{group__heap__utils_ga341ea87a651145b986792f6eb3e679c3}{vrna\_heap\_t}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{group__heap__utils_ga7e091ad5eab4e27f7dc47a2c122afea9}{vrna\_heap\_cmp\_f}})(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *a,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *b,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ *data);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ DEPRECATED(\textcolor{keyword}{typedef}\ \textcolor{keywordtype}{int}\ (vrna\_callback\_heap\_cmp)(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *a,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *b,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ *data),}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Use\ vrna\_heap\_cmp\_f\ instead!"{}});}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{typedef}\ size\_t\ (*\mbox{\hyperlink{group__heap__utils_ga2f39bc991252c2d250d30547b909ef19}{vrna\_heap\_get\_pos\_f}})(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ \ *a,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ *data);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ DEPRECATED(\textcolor{keyword}{typedef}\ \textcolor{keywordtype}{size\_t}\ (vrna\_callback\_heap\_get\_pos)(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ \ *a,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ *data),}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Use\ vrna\_heap\_get\_pos\_f\ instead!"{}});}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00091\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{group__heap__utils_ga399faec12dbb22acea63af8dbce91345}{vrna\_heap\_set\_pos\_f}})(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ \ *a,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ pos,}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ *data);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ DEPRECATED(\textcolor{keyword}{typedef}\ \textcolor{keywordtype}{void}\ (vrna\_callback\_heap\_set\_pos)(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ \ *a,}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ pos,}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ *data),}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}USe\ vrna\_heap\_set\_pos\_f\ instead!"{}});}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00134\ \mbox{\hyperlink{group__heap__utils_ga341ea87a651145b986792f6eb3e679c3}{vrna\_heap\_t}}}
+\DoxyCodeLine{00135\ \mbox{\hyperlink{group__heap__utils_ga1fdc31a1d0e15bcbf2a9122983bee001}{vrna\_heap\_init}}(\textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n,}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__heap__utils_ga7e091ad5eab4e27f7dc47a2c122afea9}{vrna\_heap\_cmp\_f}}\ \ \ \ \ cmp,}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__heap__utils_ga2f39bc991252c2d250d30547b909ef19}{vrna\_heap\_get\_pos\_f}}\ get\_entry\_pos,}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__heap__utils_ga399faec12dbb22acea63af8dbce91345}{vrna\_heap\_set\_pos\_f}}\ set\_entry\_pos,}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *data);}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00149\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00150\ \mbox{\hyperlink{group__heap__utils_ga2a4915c6e66b8831644857df0715c3ce}{vrna\_heap\_free}}(\mbox{\hyperlink{group__heap__utils_ga341ea87a651145b986792f6eb3e679c3}{vrna\_heap\_t}}\ h);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00159\ \textcolor{keywordtype}{size\_t}}
+\DoxyCodeLine{00160\ \mbox{\hyperlink{group__heap__utils_ga5d84774d7d7f000ab05724d54984c2ed}{vrna\_heap\_size}}(\textcolor{keyword}{struct}\ vrna\_heap\_s\ *h);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00172\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00173\ \mbox{\hyperlink{group__heap__utils_ga91cf0042c894de44c4eb7b47707260a8}{vrna\_heap\_insert}}(\mbox{\hyperlink{group__heap__utils_ga341ea87a651145b986792f6eb3e679c3}{vrna\_heap\_t}}\ \ h,}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ *v);}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00188\ \textcolor{keywordtype}{void}\ *}
+\DoxyCodeLine{00189\ \mbox{\hyperlink{group__heap__utils_ga42cc55c50cff314b8ea91a6d98314aea}{vrna\_heap\_pop}}(\mbox{\hyperlink{group__heap__utils_ga341ea87a651145b986792f6eb3e679c3}{vrna\_heap\_t}}\ h);}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00201\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *}
+\DoxyCodeLine{00202\ \mbox{\hyperlink{group__heap__utils_ga2f436eb3365af1a0a17fc764b44c92b8}{vrna\_heap\_top}}(\mbox{\hyperlink{group__heap__utils_ga341ea87a651145b986792f6eb3e679c3}{vrna\_heap\_t}}\ h);}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00218\ \textcolor{keywordtype}{void}\ *}
+\DoxyCodeLine{00219\ \mbox{\hyperlink{group__heap__utils_gabd08ad0cb1b5e2781bc9c2eb6e355b41}{vrna\_heap\_remove}}(\mbox{\hyperlink{group__heap__utils_ga341ea87a651145b986792f6eb3e679c3}{vrna\_heap\_t}}\ \ h,}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ \ \ *v);}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00239\ \textcolor{keywordtype}{void}\ *}
+\DoxyCodeLine{00240\ \mbox{\hyperlink{group__heap__utils_ga7a924ee5b2c2af93cf80b6e1b1f8b830}{vrna\_heap\_update}}(\mbox{\hyperlink{group__heap__utils_ga341ea87a651145b986792f6eb3e679c3}{vrna\_heap\_t}}\ \ h,}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ *v);}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,40 @@
+\hypertarget{string_8h_source}{}\doxysection{string.\+h}
+\label{string_8h_source}\index{ViennaRNA/datastructures/string.h@{ViennaRNA/datastructures/string.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VIENNA\_RNA\_PACKAGE\_STRING\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VIENNA\_RNA\_PACKAGE\_STRING\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{char}\ *vrna\_string\_t;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structvrna__string__header__s}{vrna\_string\_header\_s}}\ \{}
+\DoxyCodeLine{00013\ \ \ \textcolor{keywordtype}{size\_t}\ \ \mbox{\hyperlink{structvrna__string__header__s_aa71536dc4f6f3e2a384e23654908eb95}{len}};\ \ }
+\DoxyCodeLine{00014\ \ \ \textcolor{keywordtype}{size\_t}\ \ \mbox{\hyperlink{structvrna__string__header__s_a5a5fa7bff5fb875cf80a633068fec2a4}{size}};\ }
+\DoxyCodeLine{00015\ \ \ \textcolor{keywordtype}{size\_t}\ \ shift\_post;}
+\DoxyCodeLine{00016\ \ \ \textcolor{keywordtype}{char}\ \ \ \ backup;}
+\DoxyCodeLine{00017\ \}\ \mbox{\hyperlink{structvrna__string__header__s}{vrna\_string\_header\_t}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ VRNA\_STRING\_HEADER(s)\ ((vrna\_string\_header\_t\ *)s\ -\/\ 1)}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ vrna\_string\_t}
+\DoxyCodeLine{00023\ vrna\_string\_make(\textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ *str);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00026\ vrna\_string\_free(vrna\_string\_t\ str);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ vrna\_string\_t}
+\DoxyCodeLine{00029\ vrna\_string\_append(vrna\_string\_t\ str,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vrna\_string\_t\ \textcolor{keyword}{const}\ other);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ vrna\_string\_t}
+\DoxyCodeLine{00033\ vrna\_string\_append\_cstring(vrna\_string\_t\ \ str,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ \ \ \ \ *other);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

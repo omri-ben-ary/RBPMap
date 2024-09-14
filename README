@@ -1,0 +1,8 @@
+Steps to create dataset:
+1. Use prepare_bed_file on input bed files to fix window size (200 chars) around center, fix dataset size and shuffle data
+    1.1 We use 2 bed files to take positive samples from one file and negative from the other. see ./data/README.txt
+2. Use meme-suit Bed2Fasta tool in order to generate corresponding fasta file
+3. Use prepare_data function on processed bed file and generated fasta file to generate processed dataset
+[Optional]
+4. Generate RBPMap output file from fasta file in step 2
+5. Use label_rbp_map_results function on RBPMap output file

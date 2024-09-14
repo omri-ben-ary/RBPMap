@@ -1,0 +1,223 @@
+\hypertarget{hairpin_8h_source}{}\doxysection{hairpin.\+h}
+\label{hairpin_8h_source}\index{ViennaRNA/loops/hairpin.h@{ViennaRNA/loops/hairpin.h}}
+\mbox{\hyperlink{hairpin_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VIENNA\_RNA\_PACKAGE\_LOOPS\_HAIRPIN\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VIENNA\_RNA\_PACKAGE\_LOOPS\_HAIRPIN\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{utils_2basic_8h}{ViennaRNA/utils/basic.h}}>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{datastructures_2basic_8h}{ViennaRNA/datastructures/basic.h}}>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{fold__compound_8h}{ViennaRNA/fold\_compound.h}}>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{params_2basic_8h}{ViennaRNA/params/basic.h}}>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{salt_8h}{ViennaRNA/params/salt.h}}>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifdef\ VRNA\_WARN\_DEPRECATED}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#\ if\ defined(DEPRECATED)}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#\ \ \ undef\ DEPRECATED}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#\ endif}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#\ if\ defined(\_\_clang\_\_)}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#\ \ define\ DEPRECATED(func,\ msg)\ func\ \_\_attribute\_\_\ ((deprecated("{}"{}},\ msg)))}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#\ elif\ defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#\ \ define\ DEPRECATED(func,\ msg)\ func\ \_\_attribute\_\_\ ((deprecated(msg)))}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#\ else}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#\ \ define\ DEPRECATED(func,\ msg)\ func}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#\ endif}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#\ define\ DEPRECATED(func,\ msg)\ func}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifdef\ \_\_GNUC\_\_}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#\ define\ INLINE\ inline}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#\ define\ INLINE}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00072\ \mbox{\hyperlink{group__eval__loops__hp_ga57179ea326cc5ed8dfe4d3962b233128}{vrna\_E\_hp\_loop}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ *fc,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ j);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00085\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00086\ \mbox{\hyperlink{group__eval__loops__hp_ga7d358fa17aaf1cfc312a053accd10778}{vrna\_E\_ext\_hp\_loop}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ *fc,}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i,}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ j);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00094\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00095\ \mbox{\hyperlink{group__eval__loops__hp_gafd39e7355dcf36bf1517bafc1b49c2d2}{vrna\_eval\_ext\_hp\_loop}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ *fc,}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i,}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ j);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00111\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00112\ \mbox{\hyperlink{group__eval__loops__hp_gad0bb844f8dc704c71737ae1d7e32b975}{vrna\_eval\_hp\_loop}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ *fc,}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i,}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ j);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00149\ PRIVATE\ INLINE\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00150\ \mbox{\hyperlink{group__eval__loops__hp_gadf943ee9a45b7f4cee9192c06210dace}{E\_Hairpin}}(\textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ size,}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ type,}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ si1,}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ sj1,}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \ \ \ *\textcolor{keywordtype}{string},}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__energy__parameters_structvrna__param__s}{vrna\_param\_t}}\ \ *P)}
+\DoxyCodeLine{00156\ \{}
+\DoxyCodeLine{00157\ \ \ \textcolor{keywordtype}{int}\ energy,\ salt\_correction;}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ salt\_correction\ =\ 0;}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \textcolor{keywordflow}{if}\ (P-\/>\mbox{\hyperlink{group__energy__parameters_a7b84353eb9075c595bad4ceb871bcae7}{model\_details}}.\mbox{\hyperlink{group__model__details_a66193a872ba929c87915bcd6d7e540d2}{salt}}\ !=\ \mbox{\hyperlink{group__model__details_gaa68703da9ccc5ae6da508bfda36b533f}{VRNA\_MODEL\_DEFAULT\_SALT}})\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordflow}{if}\ (size<=\mbox{\hyperlink{constants_8h_ad1bd6eabac419670ddd3c9ed82145988}{MAXLOOP}})}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ salt\_correction\ =\ P-\/>SaltLoop[size+1];}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ salt\_correction\ =\ \mbox{\hyperlink{group__energy__parameters_ga8368ed4693a396299f3d6c96b3083b20}{vrna\_salt\_loop\_int}}(size+1,\ P-\/>\mbox{\hyperlink{group__energy__parameters_a7b84353eb9075c595bad4ceb871bcae7}{model\_details}}.\mbox{\hyperlink{group__model__details_a66193a872ba929c87915bcd6d7e540d2}{salt}},\ P-\/>\mbox{\hyperlink{group__energy__parameters_aeed2cd83713012bcb52e431041e037c8}{temperature}}+K0);}
+\DoxyCodeLine{00166\ \ \ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \textcolor{keywordflow}{if}\ (size\ <=\ 30)}
+\DoxyCodeLine{00169\ \ \ \ \ energy\ =\ P-\/>hairpin[size];}
+\DoxyCodeLine{00170\ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00171\ \ \ \ \ energy\ =\ P-\/>hairpin[30]\ +\ (int)(P-\/>lxc\ *\ log((size)\ /\ 30.));}
+\DoxyCodeLine{00172\ \ \ }
+\DoxyCodeLine{00173\ \ \ energy\ +=\ salt\_correction;}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \textcolor{keywordflow}{if}\ (size\ <\ 3)}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordflow}{return}\ energy;\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ should\ only\ be\ the\ case\ when\ folding\ alignments\ */}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \textcolor{keywordflow}{if}\ ((\textcolor{keywordtype}{string})\ \&\&\ (P-\/>\mbox{\hyperlink{group__energy__parameters_a7b84353eb9075c595bad4ceb871bcae7}{model\_details}}.\mbox{\hyperlink{group__model__details_add64a96d23e77ef1d0ddf8dfc5228143}{special\_hp}}))\ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordflow}{if}\ (size\ ==\ 4)\ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \textcolor{comment}{/*\ check\ for\ tetraloop\ bonus\ */}}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ tl[7]\ =\ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ 0}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \},\ *ts;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ memcpy(tl,\ \textcolor{keywordtype}{string},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ 6);}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ tl[6]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((ts\ =\ strstr(P-\/>Tetraloops,\ tl)))}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ P-\/>Tetraloop\_E[(ts\ -\/\ P-\/>Tetraloops)\ /\ 7]\ +\ salt\_correction;}
+\DoxyCodeLine{00188\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (size\ ==\ 6)\ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ tl[9]\ =\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ 0}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \},\ *ts;}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ memcpy(tl,\ \textcolor{keywordtype}{string},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ 8);}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ tl[8]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((ts\ =\ strstr(P-\/>Hexaloops,\ tl)))}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ P-\/>Hexaloop\_E[(ts\ -\/\ P-\/>Hexaloops)\ /\ 9]\ +\ salt\_correction;}
+\DoxyCodeLine{00196\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (size\ ==\ 3)\ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ tl[6]\ =\ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ 0}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \},\ *ts;}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ memcpy(tl,\ \textcolor{keywordtype}{string},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ 5);}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ tl[5]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((ts\ =\ strstr(P-\/>Triloops,\ tl)))}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ P-\/>Triloop\_E[(ts\ -\/\ P-\/>Triloops)\ /\ 6]\ +\ salt\_correction;}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ energy\ +\ (type\ >\ 2\ ?\ P-\/>TerminalAU\ :\ 0);}
+\DoxyCodeLine{00206\ \ \ \ \ \}}
+\DoxyCodeLine{00207\ \ \ \}}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ energy\ +=\ P-\/>mismatchH[type][si1][sj1];}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \ \ \textcolor{keywordflow}{return}\ energy;}
+\DoxyCodeLine{00212\ \}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \textcolor{comment}{/*\ End\ basic\ interface\ */}}
+\DoxyCodeLine{00243\ PRIVATE\ INLINE\ \mbox{\hyperlink{group__data__structures_ga31125aeace516926bf7f251f759b6126}{FLT\_OR\_DBL}}}
+\DoxyCodeLine{00244\ \mbox{\hyperlink{group__eval__loops__hp_ga51fb555974f180b78d76142b2894851c}{exp\_E\_Hairpin}}(\textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u,}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ type,}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{short}\ \ \ \ \ \ \ \ \ \ \ \ \ si1,}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{short}\ \ \ \ \ \ \ \ \ \ \ \ \ sj1,}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ *\textcolor{keywordtype}{string},}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__energy__parameters_structvrna__exp__param__s}{vrna\_exp\_param\_t}}\ \ *P)}
+\DoxyCodeLine{00250\ \{}
+\DoxyCodeLine{00251\ \ \ \textcolor{keywordtype}{double}\ q,\ kT,\ salt\_correction;}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \ \ kT\ =\ P-\/>kT;\ \ \ \textcolor{comment}{/*\ kT\ in\ cal/mol\ \ */}}
+\DoxyCodeLine{00254\ \ \ salt\_correction\ =\ 1.;}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \ \ \textcolor{keywordflow}{if}\ (P-\/>\mbox{\hyperlink{group__energy__parameters_ac18055127bccc27c1223f1d2f3b01b53}{model\_details}}.\mbox{\hyperlink{group__model__details_a66193a872ba929c87915bcd6d7e540d2}{salt}}\ !=\ \mbox{\hyperlink{group__model__details_gaa68703da9ccc5ae6da508bfda36b533f}{VRNA\_MODEL\_DEFAULT\_SALT}})\ \{}
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordflow}{if}\ (u<=\mbox{\hyperlink{constants_8h_ad1bd6eabac419670ddd3c9ed82145988}{MAXLOOP}})}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ salt\_correction\ =\ P-\/>expSaltLoop[u+1];}
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ salt\_correction\ =\ exp(-\/\mbox{\hyperlink{group__energy__parameters_ga8368ed4693a396299f3d6c96b3083b20}{vrna\_salt\_loop\_int}}(u+1,\ P-\/>\mbox{\hyperlink{group__energy__parameters_ac18055127bccc27c1223f1d2f3b01b53}{model\_details}}.\mbox{\hyperlink{group__model__details_a66193a872ba929c87915bcd6d7e540d2}{salt}},\ P-\/>\mbox{\hyperlink{group__energy__parameters_a674656d65ea957ddbeff8bd146b7fc16}{temperature}}+K0)\ *\ 10.\ /\ kT);}
+\DoxyCodeLine{00261\ \ \ \}}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00263\ \ \ \textcolor{keywordflow}{if}\ (u\ <=\ 30)}
+\DoxyCodeLine{00264\ \ \ \ \ q\ =\ P-\/>exphairpin[u];}
+\DoxyCodeLine{00265\ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00266\ \ \ \ \ q\ =\ P-\/>exphairpin[30]\ *\ exp(-\/(P-\/>lxc\ *\ log(u\ /\ 30.))\ *\ 10.\ /\ kT);}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \ \ q\ *=\ salt\_correction;}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00270\ \ \ \textcolor{keywordflow}{if}\ (u\ <\ 3)}
+\DoxyCodeLine{00271\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{group__data__structures_ga31125aeace516926bf7f251f759b6126}{FLT\_OR\_DBL}})q;\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ should\ only\ be\ the\ case\ when\ folding\ alignments\ */}}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \ \ \textcolor{keywordflow}{if}\ ((\textcolor{keywordtype}{string})\ \&\&\ (P-\/>\mbox{\hyperlink{group__energy__parameters_ac18055127bccc27c1223f1d2f3b01b53}{model\_details}}.\mbox{\hyperlink{group__model__details_add64a96d23e77ef1d0ddf8dfc5228143}{special\_hp}}))\ \{}
+\DoxyCodeLine{00274\ \ \ \ \ \textcolor{keywordflow}{if}\ (u\ ==\ 4)\ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ tl[7]\ =\ \{}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ 0}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \},\ *ts;}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ memcpy(tl,\ \textcolor{keywordtype}{string},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ 6);}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ tl[6]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((ts\ =\ strstr(P-\/>Tetraloops,\ tl)))\ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ !=\ 7)}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{group__data__structures_ga31125aeace516926bf7f251f759b6126}{FLT\_OR\_DBL}})(P-\/>exptetra[(ts\ -\/\ P-\/>Tetraloops)\ /\ 7]\ *\ salt\_correction);}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ q\ *=\ P-\/>exptetra[(ts\ -\/\ P-\/>Tetraloops)\ /\ 7];}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00286\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (u\ ==\ 6)\ \{}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ tl[9]\ =\ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ 0}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \},\ *ts;}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ memcpy(tl,\ \textcolor{keywordtype}{string},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ 8);}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ tl[8]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((ts\ =\ strstr(P-\/>Hexaloops,\ tl)))}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{group__data__structures_ga31125aeace516926bf7f251f759b6126}{FLT\_OR\_DBL}})(P-\/>exphex[(ts\ -\/\ P-\/>Hexaloops)\ /\ 9]\ *\ salt\_correction);}
+\DoxyCodeLine{00294\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (u\ ==\ 3)\ \{}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ tl[6]\ =\ \{}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ 0}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \},\ *ts;}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ memcpy(tl,\ \textcolor{keywordtype}{string},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ 5);}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ tl[5]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((ts\ =\ strstr(P-\/>Triloops,\ tl)))}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{group__data__structures_ga31125aeace516926bf7f251f759b6126}{FLT\_OR\_DBL}})(P-\/>exptri[(ts\ -\/\ P-\/>Triloops)\ /\ 6]\ *\ salt\_correction);}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ >\ 2)}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{group__data__structures_ga31125aeace516926bf7f251f759b6126}{FLT\_OR\_DBL}})(q\ *\ P-\/>expTermAU);}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{group__data__structures_ga31125aeace516926bf7f251f759b6126}{FLT\_OR\_DBL}})q;}
+\DoxyCodeLine{00307\ \ \ \ \ \}}
+\DoxyCodeLine{00308\ \ \ \}}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00310\ \ \ q\ *=\ P-\/>expmismatchH[type][si1][sj1];}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00312\ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{group__data__structures_ga31125aeace516926bf7f251f759b6126}{FLT\_OR\_DBL}})q;}
+\DoxyCodeLine{00313\ \}}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00325\ \mbox{\hyperlink{group__data__structures_ga31125aeace516926bf7f251f759b6126}{FLT\_OR\_DBL}}}
+\DoxyCodeLine{00326\ \mbox{\hyperlink{group__eval__loops__hp_gad62fe037be0a3fc6914676e5cb85be5e}{vrna\_exp\_E\_hp\_loop}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ *fc,}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i,}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ j);}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ }
+\DoxyCodeLine{00331\ \textcolor{comment}{/*\ End\ partition\ function\ interface\ */}}
+\DoxyCodeLine{00352\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00353\ \mbox{\hyperlink{group__mfe__backtracking_gae20d5805ddedc9b81d24735b11b6a9bf}{vrna\_BT\_hp\_loop}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ *fc,}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i,}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ j,}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ en,}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__data__structures_structvrna__bp__stack__s}{vrna\_bp\_stack\_t}}\ \ \ \ \ \ \ *bp\_stack,}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *stack\_count);}
+\DoxyCodeLine{00359\ }
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00365\ \textcolor{preprocessor}{\#ifndef\ VRNA\_DISABLE\_BACKWARD\_COMPATIBILITY}}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00376\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00378\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

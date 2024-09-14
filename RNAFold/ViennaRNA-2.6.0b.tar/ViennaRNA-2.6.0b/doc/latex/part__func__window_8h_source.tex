@@ -1,0 +1,108 @@
+\hypertarget{part__func__window_8h_source}{}\doxysection{part\+\_\+func\+\_\+window.\+h}
+\label{part__func__window_8h_source}\index{ViennaRNA/part\_func\_window.h@{ViennaRNA/part\_func\_window.h}}
+\mbox{\hyperlink{part__func__window_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VIENNA\_RNA\_PACKAGE\_PART\_FUNC\_WINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VIENNA\_RNA\_PACKAGE\_PART\_FUNC\_WINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ VRNA\_WARN\_DEPRECATED}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#\ if\ defined(DEPRECATED)}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#\ \ \ undef\ DEPRECATED}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#\ endif}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#\ if\ defined(\_\_clang\_\_)}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#\ \ define\ DEPRECATED(func,\ msg)\ func\ \_\_attribute\_\_\ ((deprecated("{}"{}},\ msg)))}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#\ elif\ defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#\ \ define\ DEPRECATED(func,\ msg)\ func\ \_\_attribute\_\_\ ((deprecated(msg)))}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#\ else}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#\ \ define\ DEPRECATED(func,\ msg)\ func}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#\ endif}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#\ define\ DEPRECATED(func,\ msg)\ func}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{datastructures_2basic_8h}{ViennaRNA/datastructures/basic.h}}>}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{group__part__func__window_ga847115aeace6030fa01185cca6e34f9e}{vrna\_probs\_window\_f}})(\mbox{\hyperlink{group__data__structures_ga31125aeace516926bf7f251f759b6126}{FLT\_OR\_DBL}}\ \ \ \ *\mbox{\hyperlink{fold__vars_8h_ac98ec419070aee6831b44e5c700f090f}{pr}},}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ pr\_size,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ i,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ max,}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ type,}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ *data);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ DEPRECATED(\textcolor{keyword}{typedef}\ \textcolor{keywordtype}{void}\ (vrna\_probs\_window\_callback)(\mbox{\hyperlink{group__data__structures_ga31125aeace516926bf7f251f759b6126}{FLT\_OR\_DBL}}\ \ \ \ *\mbox{\hyperlink{fold__vars_8h_ac98ec419070aee6831b44e5c700f090f}{pr}},}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ pr\_size,}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ i,}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ max,}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ type,}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ *data),}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Use\ vrna\_probs\_window\_f\ instead!"{}});}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{fold__compound_8h}{ViennaRNA/fold\_compound.h}}>}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{utils_2structures_8h}{ViennaRNA/utils/structures.h}}>}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ VRNA\_EXT\_LOOP\ \ \ 1U}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ VRNA\_HP\_LOOP\ \ \ \ 2U}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ VRNA\_INT\_LOOP\ \ \ 4U}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ VRNA\_MB\_LOOP\ \ \ \ 8U}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ VRNA\_ANY\_LOOP\ \ \ (VRNA\_EXT\_LOOP\ |\ VRNA\_HP\_LOOP\ |\ VRNA\_INT\_LOOP\ |\ VRNA\_MB\_LOOP)}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ VRNA\_PROBS\_WINDOW\_BPP\ \ 4096U}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ VRNA\_PROBS\_WINDOW\_UP\ \ \ 8192U}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ VRNA\_PROBS\_WINDOW\_STACKP\ \ \ 16384U}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#define\ VRNA\_PROBS\_WINDOW\_UP\_SPLIT\ \ \ 32768U}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#define\ VRNA\_PROBS\_WINDOW\_PF\ \ \ \ \ \ \ \ 65536U}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00231\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00232\ \mbox{\hyperlink{group__part__func__window_ga86ebf4399ab22f7d3126c81b5c75b9f4}{vrna\_probs\_window}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ \ \ \ \ \ \ *fc,}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ulength,}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ options,}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__part__func__window_ga847115aeace6030fa01185cca6e34f9e}{vrna\_probs\_window\_f}}\ \ cb,}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *data);}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \textcolor{comment}{/*\ End\ basic\ interface\ */}}
+\DoxyCodeLine{00267\ \mbox{\hyperlink{group__struct__utils__plist_structvrna__elem__prob__s}{vrna\_ep\_t}}\ *}
+\DoxyCodeLine{00268\ \mbox{\hyperlink{group__part__func__window_ga1f12fb1ae8b1d0a5d7ab7c2cdddf98c1}{vrna\_pfl\_fold}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \ *sequence,}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ window\_size,}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__model__details_ga18df869af0d70101106458fc3f027806}{max\_bp\_span}},}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ cutoff);}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00296\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00297\ \mbox{\hyperlink{group__part__func__window_ga666afcc1cda1822d0cd3b7f7f7f73f2d}{vrna\_pfl\_fold\_cb}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *sequence,}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ window\_size,}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__model__details_ga18df869af0d70101106458fc3f027806}{max\_bp\_span}},}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__part__func__window_ga847115aeace6030fa01185cca6e34f9e}{vrna\_probs\_window\_f}}\ cb,}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *data);}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00326\ \textcolor{keywordtype}{double}\ **}
+\DoxyCodeLine{00327\ \mbox{\hyperlink{group__part__func__window_gaef3a34027fcf975dda31602d7b4ac4f2}{vrna\_pfl\_fold\_up}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *sequence,}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ ulength,}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ window\_size,}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \mbox{\hyperlink{group__model__details_ga18df869af0d70101106458fc3f027806}{max\_bp\_span}});}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00356\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00357\ \mbox{\hyperlink{group__part__func__window_ga25f154804af6463afddcbebe565fd465}{vrna\_pfl\_fold\_up\_cb}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *sequence,}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ulength,}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ window\_size,}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__model__details_ga18df869af0d70101106458fc3f027806}{max\_bp\_span}},}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__part__func__window_ga847115aeace6030fa01185cca6e34f9e}{vrna\_probs\_window\_f}}\ \ cb,}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *data);}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00364\ }
+\DoxyCodeLine{00365\ \textcolor{comment}{/*\ End\ simplified\ interface\ */}}
+\DoxyCodeLine{00371\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

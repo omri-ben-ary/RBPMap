@@ -1,0 +1,27 @@
+var unstructured__domains_8h =
+[
+    [ "vrna_unstructured_domain_motif_s", "structvrna__unstructured__domain__motif__s.html", null ],
+    [ "VRNA_UNSTRUCTURED_DOMAIN_EXT_LOOP", "group__domains__up.html#gaac911374e86236a51bfd42e1f098eaba", null ],
+    [ "VRNA_UNSTRUCTURED_DOMAIN_HP_LOOP", "group__domains__up.html#ga23b610ea9564346c45cc1e2bbb62adf7", null ],
+    [ "VRNA_UNSTRUCTURED_DOMAIN_INT_LOOP", "group__domains__up.html#gac4a0feccd9654c149203200248c2716b", null ],
+    [ "VRNA_UNSTRUCTURED_DOMAIN_MB_LOOP", "group__domains__up.html#ga67b80796655e5227a4ed662bfbe398b0", null ],
+    [ "VRNA_UNSTRUCTURED_DOMAIN_MOTIF", "group__domains__up.html#gaab12b58d59be76446a9f76fad2fe624c", null ],
+    [ "VRNA_UNSTRUCTURED_DOMAIN_ALL_LOOPS", "group__domains__up.html#ga3c6be4cce70f1af9e885788856101699", null ],
+    [ "vrna_ud_t", "group__domains__up.html#ga0009117b14d29143e8b18ab891f48c2d", null ],
+    [ "vrna_ud_f", "group__domains__up.html#ga6d33a2a17b5a3585dbf1cca3685b472f", null ],
+    [ "vrna_ud_exp_f", "group__domains__up.html#ga99163f43aeb90562ddcb0f567c095beb", null ],
+    [ "vrna_ud_production_f", "group__domains__up.html#ga54015512c1646d1ca678f9e91c4eb761", null ],
+    [ "vrna_ud_exp_production_f", "group__domains__up.html#ga1813c1e3a72eb031df24e1339d02504a", null ],
+    [ "vrna_ud_add_probs_f", "group__domains__up.html#ga44f09396f884f72755fef85adc277f99", null ],
+    [ "vrna_ud_get_probs_f", "group__domains__up.html#ga039aa8e0e19eefb4d021a55b02589d47", null ],
+    [ "vrna_ud_motifs_centroid", "group__domains__up.html#ga89440fa4f7b951ad9dcd6da567f37ea2", null ],
+    [ "vrna_ud_motifs_MEA", "group__domains__up.html#ga3694cf090ccb64f8398e0f4c786aad50", null ],
+    [ "vrna_ud_motifs_MFE", "group__domains__up.html#ga46d6cfffebf89032019004a026c8f63c", null ],
+    [ "vrna_ud_add_motif", "group__domains__up.html#ga55f7de5ef5b7472b0eeab9296b57f671", null ],
+    [ "vrna_ud_get_motif_size_at", "unstructured__domains_8h.html#a250f1542f6574ed33b114f3f41922c03", null ],
+    [ "vrna_ud_remove", "group__domains__up.html#gada59cb0c498b812eadd010811af3f2d4", null ],
+    [ "vrna_ud_set_data", "group__domains__up.html#ga9444d4674d906004c0cfca17d7db4b53", null ],
+    [ "vrna_ud_set_prod_rule_cb", "group__domains__up.html#ga073f406c85a724bf763c4d7b64fe56a6", null ],
+    [ "vrna_ud_set_exp_prod_rule_cb", "group__domains__up.html#gaedb1e2a37877dd7a91f68f7eeba705cb", null ],
+    [ "vrna_ud_set_prob_cb", "unstructured__domains_8h.html#a4657cca389e571190e30c9e2147a76b2", null ]
+];

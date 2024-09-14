@@ -1,0 +1,5 @@
+<map id="vrna_sc_s" name="vrna_sc_s">
+<area shape="rect" id="node1" title="The soft constraints data structure." alt="" coords="118,93,201,119"/>
+<area shape="rect" id="node2" href="$structvrna__sc__bp__storage__t.html" title="A base pair constraint." alt="" coords="5,5,156,31"/>
+<area shape="rect" id="node3" href="$group__data__structures.html#structvrna__basepair__s" title="Base pair data structure used in subopt.c." alt="" coords="181,5,298,31"/>
+</map>

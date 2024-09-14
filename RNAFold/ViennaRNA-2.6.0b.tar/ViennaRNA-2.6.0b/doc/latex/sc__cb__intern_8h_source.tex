@@ -1,0 +1,71 @@
+\hypertarget{sc__cb__intern_8h_source}{}\doxysection{sc\+\_\+cb\+\_\+intern.\+h}
+\label{sc__cb__intern_8h_source}\index{ViennaRNA/constraints/sc\_cb\_intern.h@{ViennaRNA/constraints/sc\_cb\_intern.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VIENNA\_RNA\_PACKAGE\_CONSTRAINTS\_SOFT\_INTERN\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VIENNA\_RNA\_PACKAGE\_CONSTRAINTS\_SOFT\_INTERN\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ MOD\_PARAMS\_STACK\_dG\ \ \ \ \ (1\ <<\ 0)}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ MOD\_PARAMS\_STACK\_dH\ \ \ \ \ (1\ <<\ 1)}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ MOD\_PARAMS\_MISMATCH\_dG\ \ (1\ <<\ 2)}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ MOD\_PARAMS\_MISMATCH\_dH\ \ (1\ <<\ 3)}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ MOD\_PARAMS\_TERMINAL\_dG\ \ (1\ <<\ 4)}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ MOD\_PARAMS\_TERMINAL\_dH\ \ (1\ <<\ 5)}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ MOD\_PARAMS\_DANGLES\_dG\ \ \ (1\ <<\ 6)}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ MOD\_PARAMS\_DANGLES\_dH\ \ \ (1\ <<\ 7)}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \#define\ DEBUG}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ MAX\_ALPHABET\ \ (6)}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MAX\_PAIRS\ \ \ \ \ (NBPAIRS\ +\ 1\ +\ 25)}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{/*\ a\ container\ to\ store\ the\ data\ read\ from\ a\ json\ parameter\ file\ */}}
+\DoxyCodeLine{00021\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structvrna__sc__mod__param__s}{vrna\_sc\_mod\_param\_s}}\ \{}
+\DoxyCodeLine{00022\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ available;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ *name;}
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ one\_letter\_code;}
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ unmodified;}
+\DoxyCodeLine{00027\ \ \ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ pairing\_partners[7];}
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ pairing\_partners\_encoding[7];}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ unmodified\_encoding;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ num\_ptypes;}
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ ptypes[MAX\_ALPHABET][MAX\_ALPHABET];}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ stack\_dG[MAX\_PAIRS][MAX\_ALPHABET][MAX\_ALPHABET];}
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ stack\_dH[MAX\_PAIRS][MAX\_ALPHABET][MAX\_ALPHABET];}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ dangle5\_dG[MAX\_PAIRS][MAX\_ALPHABET];}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ dangle5\_dH[MAX\_PAIRS][MAX\_ALPHABET];}
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ dangle3\_dG[MAX\_PAIRS][MAX\_ALPHABET];}
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ dangle3\_dH[MAX\_PAIRS][MAX\_ALPHABET];}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ mismatch\_dG[MAX\_PAIRS][MAX\_ALPHABET][MAX\_ALPHABET];}
+\DoxyCodeLine{00043\ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ mismatch\_dH[MAX\_PAIRS][MAX\_ALPHABET][MAX\_ALPHABET];}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ terminal\_dG[MAX\_PAIRS];}
+\DoxyCodeLine{00046\ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ terminal\_dH[MAX\_PAIRS];}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{comment}{/*\ the\ actual\ data\ structure\ passed\ around\ while\ evaluating\ */}}
+\DoxyCodeLine{00050\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{short}\ \ \ *enc;}
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{size\_t}\ \ ptypes[MAX\_ALPHABET][MAX\_ALPHABET];}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ stack\_diff[MAX\_PAIRS][MAX\_ALPHABET][MAX\_ALPHABET];}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ dangle5\_diff[MAX\_PAIRS][MAX\_ALPHABET];}
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ dangle3\_diff[MAX\_PAIRS][MAX\_ALPHABET];}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ mismatch\_diff[MAX\_PAIRS][MAX\_ALPHABET][MAX\_ALPHABET];}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ terminal\_diff[MAX\_PAIRS];}
+\DoxyCodeLine{00062\ \}\ \mbox{\hyperlink{structenergy__corrections}{energy\_corrections}};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,76 @@
+\hypertarget{heat__capacity_8h_source}{}\doxysection{heat\+\_\+capacity.\+h}
+\label{heat__capacity_8h_source}\index{ViennaRNA/heat\_capacity.h@{ViennaRNA/heat\_capacity.h}}
+\mbox{\hyperlink{heat__capacity_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VIENNA\_RNA\_PACKAGE\_MELTING\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VIENNA\_RNA\_PACKAGE\_MELTING\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{datastructures_2basic_8h}{ViennaRNA/datastructures/basic.h}}>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifdef\ VRNA\_WARN\_DEPRECATED}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#\ if\ defined(DEPRECATED)}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#\ \ \ undef\ DEPRECATED}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#\ endif}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#\ if\ defined(\_\_clang\_\_)}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#\ \ define\ DEPRECATED(func,\ msg)\ func\ \_\_attribute\_\_\ ((deprecated("{}"{}},\ msg)))}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#\ elif\ defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#\ \ define\ DEPRECATED(func,\ msg)\ func\ \_\_attribute\_\_\ ((deprecated(msg)))}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#\ else}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#\ \ define\ DEPRECATED(func,\ msg)\ func}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#\ endif}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#\ define\ DEPRECATED(func,\ msg)\ func}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{group__thermodynamics_gafa73325bee7e6b7c9d1732d70e67d65a}{vrna\_heat\_capacity\_f}})(\textcolor{keywordtype}{float}\ \ temp,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ heat\_capacity,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ *data);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ DEPRECATED(\textcolor{keyword}{typedef}\ \textcolor{keywordtype}{void}\ (vrna\_heat\_capacity\_callback)(\textcolor{keywordtype}{float}\ \ temp,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ heat\_capacity,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ *data),}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Use\ vrna\_heat\_capacity\_f\ instead!"{}});}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{group__thermodynamics_structvrna__heat__capacity__s}{vrna\_heat\_capacity\_s}}\ \mbox{\hyperlink{group__thermodynamics_structvrna__heat__capacity__s}{vrna\_heat\_capacity\_t}};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{group__thermodynamics_structvrna__heat__capacity__s}{vrna\_heat\_capacity\_s}}\ \{}
+\DoxyCodeLine{00077\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{group__thermodynamics_a62ed3466ce614f4f1e729463fac41d72}{temperature}};\ \ \ \ }
+\DoxyCodeLine{00078\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{group__thermodynamics_a2987d5e5ef974d14a108ec1c7062562f}{heat\_capacity}};\ \ }
+\DoxyCodeLine{00079\ \};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00111\ \mbox{\hyperlink{group__thermodynamics_structvrna__heat__capacity__s}{vrna\_heat\_capacity\_t}}\ *}
+\DoxyCodeLine{00112\ \mbox{\hyperlink{group__thermodynamics_gafd95c2350d67d8f4374369c19cf111f1}{vrna\_heat\_capacity}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ *fc,}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\_min,}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\_max,}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\_increment,}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ mpoints);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00148\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00149\ \mbox{\hyperlink{group__thermodynamics_ga19ef508fcc66ab80833aa2fe402d8927}{vrna\_heat\_capacity\_cb}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ \ \ \ \ \ \ *fc,}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\_min,}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\_max,}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\_increment,}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mpoints,}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__thermodynamics_gafa73325bee7e6b7c9d1732d70e67d65a}{vrna\_heat\_capacity\_f}}\ cb,}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *data);}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{comment}{/*\ End\ basic\ interface\ */}}
+\DoxyCodeLine{00192\ \mbox{\hyperlink{group__thermodynamics_structvrna__heat__capacity__s}{vrna\_heat\_capacity\_t}}\ *}
+\DoxyCodeLine{00193\ \mbox{\hyperlink{group__thermodynamics_ga0c2664e15dded704d805a9d2a625ff21}{vrna\_heat\_capacity\_simple}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \ \ \ *sequence,}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ T\_min,}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ T\_max,}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ T\_increment,}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ mpoints);}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \textcolor{comment}{/*\ End\ basic\ interface\ */}}
+\DoxyCodeLine{00202\ \textcolor{comment}{/*\ End\ thermodynamics\ */}}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

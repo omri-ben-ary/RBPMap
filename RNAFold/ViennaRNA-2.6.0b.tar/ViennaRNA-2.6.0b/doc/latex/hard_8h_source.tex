@@ -1,0 +1,278 @@
+\hypertarget{hard_8h_source}{}\doxysection{hard.\+h}
+\label{hard_8h_source}\index{ViennaRNA/constraints/hard.h@{ViennaRNA/constraints/hard.h}}
+\mbox{\hyperlink{hard_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VIENNA\_RNA\_PACKAGE\_CONSTRAINTS\_HARD\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VIENNA\_RNA\_PACKAGE\_CONSTRAINTS\_HARD\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ VRNA\_WARN\_DEPRECATED}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#\ if\ defined(\_\_clang\_\_)}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#\ \ define\ DEPRECATED(func,\ msg)\ func\ \_\_attribute\_\_\ ((deprecated("{}"{}},\ msg)))}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#\ elif\ defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#\ \ define\ DEPRECATED(func,\ msg)\ func\ \_\_attribute\_\_\ ((deprecated(msg)))}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#\ else}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#\ \ define\ DEPRECATED(func,\ msg)\ func}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#\ endif}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#\ define\ DEPRECATED(func,\ msg)\ func}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ \ }\mbox{\hyperlink{group__hard__constraints_structvrna__hc__s}{vrna\_hc\_s}}\ \mbox{\hyperlink{group__hard__constraints_structvrna__hc__s}{vrna\_hc\_t}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{group__hard__constraints_structvrna__hc__up__s}{vrna\_hc\_up\_s}}\ \mbox{\hyperlink{group__hard__constraints_structvrna__hc__up__s}{vrna\_hc\_up\_t}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }vrna\_hc\_depot\_s\ vrna\_hc\_depot\_t;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{fold__compound_8h}{ViennaRNA/fold\_compound.h}}>}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{constraints_2basic_8h}{ViennaRNA/constraints/basic.h}}>}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ char\ (*\mbox{\hyperlink{group__hard__constraints_ga23a523332de2867a1568a0229345ab80}{vrna\_hc\_eval\_f}})(\textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ i,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ j,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ k,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ l,}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ d,}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ *data);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ DEPRECATED(\textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ (vrna\_callback\_hc\_evaluate)(\textcolor{keywordtype}{int}\ i,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ j,}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ k,}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ l,}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ d,}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *data),}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Use\ vrna\_hc\_eval\_f\ instead!"{}});}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_NO\_HEADER\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_DB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16384U}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_DB\_ENFORCE\_BP\ \ \ \ \ \ \ \ \ \ \ 32768U}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_DB\_PIPE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 65536U}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_DB\_DOT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 131072U}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_DB\_X\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 262144U}}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_DB\_ANG\_BRACK\ \ \ \ \ \ \ \ \ 524288U}}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_DB\_RND\_BRACK\ \ \ \ \ \ \ \ \ 1048576U}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_DB\_INTRAMOL\ \ \ \ 2097152U}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_DB\_INTERMOL\ \ \ \ 4194304U}}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_DB\_GQUAD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 8388608U}}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_DB\_CANONICAL\_BP\ \ \ \ \ \ \ \ \ 16777216U}}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_DB\_WUSS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 33554432U}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_DB\_DEFAULT\ \(\backslash\)}}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\ \ (VRNA\_CONSTRAINT\_DB\ \(\backslash\)}}
+\DoxyCodeLine{00236\ \textcolor{preprocessor}{\ \ \ |\ VRNA\_CONSTRAINT\_DB\_PIPE\ \(\backslash\)}}
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\ \ \ |\ VRNA\_CONSTRAINT\_DB\_DOT\ \(\backslash\)}}
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\ \ \ |\ VRNA\_CONSTRAINT\_DB\_X\ \(\backslash\)}}
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\ \ \ |\ VRNA\_CONSTRAINT\_DB\_ANG\_BRACK\ \(\backslash\)}}
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\ \ \ |\ VRNA\_CONSTRAINT\_DB\_RND\_BRACK\ \(\backslash\)}}
+\DoxyCodeLine{00241\ \textcolor{preprocessor}{\ \ \ |\ VRNA\_CONSTRAINT\_DB\_INTRAMOL\ \(\backslash\)}}
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\ \ \ |\ VRNA\_CONSTRAINT\_DB\_INTERMOL\ \(\backslash\)}}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\ \ \ |\ VRNA\_CONSTRAINT\_DB\_GQUAD\ \(\backslash\)}}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\ \ )}}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_CONTEXT\_EXT\_LOOP\ \ \ \ \ \ (unsigned\ char)0x01}}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_CONTEXT\_HP\_LOOP\ \ \ \ \ \ \ (unsigned\ char)0x02}}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00268\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_CONTEXT\_INT\_LOOP\ \ \ \ \ \ (unsigned\ char)0x04}}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00276\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_CONTEXT\_INT\_LOOP\_ENC\ \ (unsigned\ char)0x08}}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_CONTEXT\_MB\_LOOP\ \ \ \ \ \ \ (unsigned\ char)0x10}}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00292\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_CONTEXT\_MB\_LOOP\_ENC\ \ \ (unsigned\ char)0x20}}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00297\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_CONTEXT\_ENFORCE\ \ \ \ \ \ \ (unsigned\ char)0x40}}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_CONTEXT\_NO\_REMOVE\ \ \ \ \ (unsigned\ char)0x80}}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_CONTEXT\_NONE\ \ \ \ \ \ \ \ \ \ (unsigned\ char)0}}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00313\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_CONTEXT\_CLOSING\_LOOPS\ (unsigned\ char)(VRNA\_CONSTRAINT\_CONTEXT\_EXT\_LOOP\ |\ \(\backslash\)}}
+\DoxyCodeLine{00314\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ VRNA\_CONSTRAINT\_CONTEXT\_HP\_LOOP\ |\ \(\backslash\)}}
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ VRNA\_CONSTRAINT\_CONTEXT\_INT\_LOOP\ |\ \(\backslash\)}}
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ VRNA\_CONSTRAINT\_CONTEXT\_MB\_LOOP)}}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00321\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_CONTEXT\_ENCLOSED\_LOOPS\ \ (unsigned\ char)(VRNA\_CONSTRAINT\_CONTEXT\_INT\_LOOP\_ENC\ |\ \(\backslash\)}}
+\DoxyCodeLine{00322\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ VRNA\_CONSTRAINT\_CONTEXT\_MB\_LOOP\_ENC)}}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00330\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_CONTEXT\_ALL\_LOOPS\ \ \ \ \ (unsigned\ char)(VRNA\_CONSTRAINT\_CONTEXT\_CLOSING\_LOOPS\ |\ \(\backslash\)}}
+\DoxyCodeLine{00331\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ VRNA\_CONSTRAINT\_CONTEXT\_ENCLOSED\_LOOPS)}}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00334\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_WINDOW\_UPDATE\_5\ \ \ \ \ \ \ 1U}}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \textcolor{preprocessor}{\#define\ VRNA\_CONSTRAINT\_WINDOW\_UPDATE\_3\ \ \ \ \ \ \ 2U}}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00344\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00345\ \ \ \mbox{\hyperlink{hard_8h_a0fcb8bda9b3712e14f8f513def112435a030a42722f849b10dd5780ceed7dfedd}{VRNA\_HC\_DEFAULT}},\ \ }
+\DoxyCodeLine{00346\ \ \ \mbox{\hyperlink{hard_8h_a0fcb8bda9b3712e14f8f513def112435a876c110b3de8e8c89ba5824b08cadb74}{VRNA\_HC\_WINDOW}}\ \ \ \ }
+\DoxyCodeLine{00350\ \}\ \mbox{\hyperlink{hard_8h_a0fcb8bda9b3712e14f8f513def112435}{vrna\_hc\_type\_e}};}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00352\ }
+\DoxyCodeLine{00377\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{group__hard__constraints_structvrna__hc__s}{vrna\_hc\_s}}\ \{}
+\DoxyCodeLine{00378\ \ \ \mbox{\hyperlink{hard_8h_a0fcb8bda9b3712e14f8f513def112435}{vrna\_hc\_type\_e}}\ \ type;}
+\DoxyCodeLine{00379\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ n;}
+\DoxyCodeLine{00380\ }
+\DoxyCodeLine{00381\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \ \ state;}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00383\ \textcolor{preprocessor}{\#ifndef\ VRNA\_DISABLE\_C11\_FEATURES}}
+\DoxyCodeLine{00384\ \ \ \textcolor{comment}{/*\ C11\ support\ for\ unnamed\ unions/structs\ */}}
+\DoxyCodeLine{00385\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00386\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00387\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00388\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *mx;}
+\DoxyCodeLine{00389\ \textcolor{preprocessor}{\#ifndef\ VRNA\_DISABLE\_C11\_FEATURES}}
+\DoxyCodeLine{00390\ \};}
+\DoxyCodeLine{00391\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00392\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00393\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ **matrix\_local;}
+\DoxyCodeLine{00394\ \textcolor{preprocessor}{\#ifndef\ VRNA\_DISABLE\_C11\_FEATURES}}
+\DoxyCodeLine{00395\ \};}
+\DoxyCodeLine{00396\ \};}
+\DoxyCodeLine{00397\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00399\ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{group__hard__constraints_a60094038af04093b2fee9b883266ff75}{up\_ext}};\ \ \ \ }
+\DoxyCodeLine{00402\ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{group__hard__constraints_a853255558e7e7d9eb382ac142ac8de3d}{up\_hp}};\ \ \ \ \ }
+\DoxyCodeLine{00405\ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{group__hard__constraints_a455f994af0ec892d84fee1bf60d14a81}{up\_int}};\ \ \ \ }
+\DoxyCodeLine{00408\ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{group__hard__constraints_aa318079c2e3cfaca8dc589cc478d3b29}{up\_ml}};\ \ \ \ \ }
+\DoxyCodeLine{00412\ \ \ \mbox{\hyperlink{group__hard__constraints_ga23a523332de2867a1568a0229345ab80}{vrna\_hc\_eval\_f}}\ \ \ \ \ \ \mbox{\hyperlink{group__hard__constraints_ab8e78449185c98024fca57720e0db1f0}{f}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00416\ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{group__hard__constraints_acef3d722142cb5f4a8e114e5fbce3b1a}{data}};\ \ \ \ \ \ }
+\DoxyCodeLine{00421\ \ \ \mbox{\hyperlink{group__fold__compound_gab4e75b7511179095ef41dc1a8656433a}{vrna\_auxdata\_free\_f}}\ \mbox{\hyperlink{group__hard__constraints_aae5cddf2662f6a2027ac89ff5deaf6ab}{free\_data}};\ \ }
+\DoxyCodeLine{00432\ \ \ vrna\_hc\_depot\_t\ *depot;}
+\DoxyCodeLine{00433\ \};}
+\DoxyCodeLine{00434\ }
+\DoxyCodeLine{00440\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{group__hard__constraints_structvrna__hc__up__s}{vrna\_hc\_up\_s}}\ \{}
+\DoxyCodeLine{00441\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__hard__constraints_a67a98def263c534a8c57298098da16e8}{position}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00442\ \ \ \textcolor{keywordtype}{int}\ strand;}
+\DoxyCodeLine{00443\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__hard__constraints_a468414760f373f7dc0eb1fd47cf708d0}{options}};\ \ }
+\DoxyCodeLine{00444\ \};}
+\DoxyCodeLine{00445\ }
+\DoxyCodeLine{00468\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00469\ \mbox{\hyperlink{group__constraints_gaa1f20b53bf09ac2e6b0dbb13f7d89670}{vrna\_message\_constraint\_options}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ option);}
+\DoxyCodeLine{00470\ }
+\DoxyCodeLine{00471\ }
+\DoxyCodeLine{00482\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00483\ \mbox{\hyperlink{group__constraints_gaec7e13fa0465c2acc7a621d1aecb709f}{vrna\_message\_constraint\_options\_all}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00484\ }
+\DoxyCodeLine{00485\ }
+\DoxyCodeLine{00500\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00501\ \mbox{\hyperlink{group__hard__constraints_ga36ff456c43bf920629cee5a236e4f0ff}{vrna\_hc\_init}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ *vc);}
+\DoxyCodeLine{00502\ }
+\DoxyCodeLine{00503\ }
+\DoxyCodeLine{00504\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00505\ vrna\_hc\_init\_window(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ *vc);}
+\DoxyCodeLine{00506\ }
+\DoxyCodeLine{00507\ }
+\DoxyCodeLine{00508\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00509\ vrna\_hc\_prepare(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ *fc,}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ options);}
+\DoxyCodeLine{00511\ }
+\DoxyCodeLine{00512\ }
+\DoxyCodeLine{00513\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00514\ vrna\_hc\_update(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ *fc,}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ i,}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ options);}
+\DoxyCodeLine{00517\ }
+\DoxyCodeLine{00518\ }
+\DoxyCodeLine{00533\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00534\ \mbox{\hyperlink{group__hard__constraints_ga447d88e06ad97bb225cd83310ace8345}{vrna\_hc\_add\_up}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ *vc,}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i,}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ option);}
+\DoxyCodeLine{00537\ }
+\DoxyCodeLine{00538\ }
+\DoxyCodeLine{00539\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00540\ vrna\_hc\_add\_up\_strand(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ *fc,}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ i,}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ strand,}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ option);}
+\DoxyCodeLine{00544\ }
+\DoxyCodeLine{00545\ }
+\DoxyCodeLine{00555\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00556\ \mbox{\hyperlink{group__hard__constraints_ga5070f296c8af2baea10951525519464f}{vrna\_hc\_add\_up\_batch}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ *vc,}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__hard__constraints_structvrna__hc__up__s}{vrna\_hc\_up\_t}}\ \ \ \ \ \ \ \ \ *constraints);}
+\DoxyCodeLine{00558\ }
+\DoxyCodeLine{00559\ }
+\DoxyCodeLine{00560\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00561\ vrna\_hc\_add\_up\_strand\_batch(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ *fc,}
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__hard__constraints_structvrna__hc__up__s}{vrna\_hc\_up\_t}}\ \ \ \ \ \ \ \ \ \ *constraints);}
+\DoxyCodeLine{00563\ }
+\DoxyCodeLine{00564\ }
+\DoxyCodeLine{00581\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00582\ \mbox{\hyperlink{group__hard__constraints_ga85481542ef1fcb6ed6ca3cef45e2451b}{vrna\_hc\_add\_bp}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ *vc,}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i,}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ j,}
+\DoxyCodeLine{00585\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ option);}
+\DoxyCodeLine{00586\ }
+\DoxyCodeLine{00587\ }
+\DoxyCodeLine{00588\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00589\ vrna\_hc\_add\_bp\_strand(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ *fc,}
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ i,}
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ strand\_i,}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ j,}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ strand\_j,}
+\DoxyCodeLine{00594\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ option);}
+\DoxyCodeLine{00595\ }
+\DoxyCodeLine{00596\ }
+\DoxyCodeLine{00614\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00615\ \mbox{\hyperlink{group__hard__constraints_gaed50398ade2d4852c9e82592fe76046c}{vrna\_hc\_add\_bp\_nonspecific}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ *vc,}
+\DoxyCodeLine{00616\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i,}
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ d,}
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ option);}
+\DoxyCodeLine{00619\ }
+\DoxyCodeLine{00620\ }
+\DoxyCodeLine{00632\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00633\ \mbox{\hyperlink{group__hard__constraints_ga696dcf77887d856c6f21ea266d8b9ca2}{vrna\_hc\_free}}(\mbox{\hyperlink{group__hard__constraints_structvrna__hc__s}{vrna\_hc\_t}}\ *hc);}
+\DoxyCodeLine{00634\ }
+\DoxyCodeLine{00635\ }
+\DoxyCodeLine{00640\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00641\ \mbox{\hyperlink{hard_8h_a2f80043bc52ce7114f6c12dd84aae2b7}{vrna\_hc\_add\_f}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ *vc,}
+\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__hard__constraints_ga23a523332de2867a1568a0229345ab80}{vrna\_hc\_eval\_f}}\ \ \ \ \ \ \ \ f);}
+\DoxyCodeLine{00643\ }
+\DoxyCodeLine{00644\ }
+\DoxyCodeLine{00656\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00657\ \mbox{\hyperlink{hard_8h_a105e4336909c2508746fd3c38c05d48a}{vrna\_hc\_add\_data}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ *vc,}
+\DoxyCodeLine{00658\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *data,}
+\DoxyCodeLine{00659\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__fold__compound_gab4e75b7511179095ef41dc1a8656433a}{vrna\_auxdata\_free\_f}}\ \ f);}
+\DoxyCodeLine{00660\ }
+\DoxyCodeLine{00661\ }
+\DoxyCodeLine{00680\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00681\ \mbox{\hyperlink{group__hard__constraints_ga5b4de3247b67358080c176b94591a8e6}{vrna\_hc\_add\_from\_db}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ *vc,}
+\DoxyCodeLine{00682\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ \ \ *constraint,}
+\DoxyCodeLine{00683\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ options);}
+\DoxyCodeLine{00684\ }
+\DoxyCodeLine{00685\ }
+\DoxyCodeLine{00686\ \textcolor{preprocessor}{\#ifndef\ VRNA\_DISABLE\_BACKWARD\_COMPATIBILITY}}
+\DoxyCodeLine{00687\ }
+\DoxyCodeLine{00695\ DEPRECATED(\textcolor{keywordtype}{void}}
+\DoxyCodeLine{00696\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{hard_8h_a4d167deb70bb51723e44374dc981deb2}{print\_tty\_constraint}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ option),}
+\DoxyCodeLine{00697\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Use\ vrna\_message\_constraint\_options()\ instead"{}});}
+\DoxyCodeLine{00698\ }
+\DoxyCodeLine{00705\ DEPRECATED(\textcolor{keywordtype}{void}}
+\DoxyCodeLine{00706\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{hard_8h_ae8ae8a34962b9959be3f6c40f0a80ac1}{print\_tty\_constraint\_full}}(\textcolor{keywordtype}{void}),}
+\DoxyCodeLine{00707\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Use\ vrna\_message\_constraint\_options\_all()\ instead"{}});}
+\DoxyCodeLine{00708\ }
+\DoxyCodeLine{00721\ DEPRECATED(\textcolor{keywordtype}{void}}
+\DoxyCodeLine{00722\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{hard_8h_a36c3a6c3218b041f992052767bc74549}{constrain\_ptypes}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \ \ \ *constraint,}
+\DoxyCodeLine{00723\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ length,}
+\DoxyCodeLine{00724\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ *ptype,}
+\DoxyCodeLine{00725\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ *BP,}
+\DoxyCodeLine{00726\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ min\_loop\_size,}
+\DoxyCodeLine{00727\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ idx\_type),}
+\DoxyCodeLine{00728\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Use\ the\ new\ API\ and\ the\ hard\ constraint\ framework\ instead"{}});}
+\DoxyCodeLine{00729\ }
+\DoxyCodeLine{00730\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00731\ }
+\DoxyCodeLine{00732\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

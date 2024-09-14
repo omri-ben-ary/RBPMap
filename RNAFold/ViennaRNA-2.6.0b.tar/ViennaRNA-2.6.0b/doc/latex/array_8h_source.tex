@@ -1,0 +1,84 @@
+\hypertarget{array_8h_source}{}\doxysection{array.\+h}
+\label{array_8h_source}\index{ViennaRNA/datastructures/array.h@{ViennaRNA/datastructures/array.h}}
+\mbox{\hyperlink{array_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VIENNA\_RNA\_PACKAGE\_ARRAY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VIENNA\_RNA\_PACKAGE\_ARRAY\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#if\ !defined(VRNA\_NO\_INLINE)}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\ \ \#if\ defined(\_MSC\_VER)}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\ \ \ \ \#define\ VRNA\_NO\_INLINE\ \_\_declspec(noinline)}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\ \ \#else}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \ \ \ \#define\ VRNA\_NO\_INLINE\ \_\_attribute\_\_\ ((noinline))}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00091\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{group__array__utils_structvrna__array__header__s}{vrna\_array\_header\_s}}\ \{}
+\DoxyCodeLine{00092\ \ \ \textcolor{keywordtype}{size\_t}\ \ \mbox{\hyperlink{group__array__utils_a0dedd91d1cee78a7298f30da37117036}{num}};\ \ }
+\DoxyCodeLine{00093\ \ \ \textcolor{keywordtype}{size\_t}\ \ \mbox{\hyperlink{group__array__utils_a1cce2f7b1524bf509eeedb6feef73dbc}{size}};\ }
+\DoxyCodeLine{00094\ \}\ \mbox{\hyperlink{group__array__utils_gae5058b15eb7d97c5a5aadda15957c3c5}{vrna\_array\_header\_t}};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ vrna\_array(Type)\ Type\ *}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ vrna\_array\_make(Type,\ Name)\ Type\ *\ Name;\ vrna\_array\_init(Name)}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#ifndef\ VRNA\_ARRAY\_GROW\_FORMULA}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ VRNA\_ARRAY\_GROW\_FORMULA(n)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1.4\ *\ (n)\ +\ 8)}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ VRNA\_ARRAY\_HEADER(input)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((vrna\_array\_header\_t\ *)(input)\ -\/\ 1)}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ vrna\_array\_size(input)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (VRNA\_ARRAY\_HEADER(input)-\/>num)}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ vrna\_array\_capacity(input)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (VRNA\_ARRAY\_HEADER(input)-\/>size)}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ vrna\_array\_set\_capacity(a,\ capacity)\ do\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\ \ if\ (a)\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\ \ \ \ void\ **a\_ptr\ =\ (void\ **)\&(a);\ \(\backslash\)}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\ \ \ \ *a\_ptr\ =\ vrna\_\_array\_set\_capacity((a),\ (capacity),\ sizeof(*(a)));\ \(\backslash\)}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\ \ \}\ \(\backslash\)}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\}\ while\ (0)}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00143\ VRNA\_NO\_INLINE\ \textcolor{keywordtype}{void}\ *}
+\DoxyCodeLine{00144\ \mbox{\hyperlink{group__array__utils_ga05b1c13a4c2e240bfdd6d145eff25dab}{vrna\_\_array\_set\_capacity}}(\textcolor{keywordtype}{void}\ \ \ \ *array,}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ capacity,}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ element\_size);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ vrna\_array\_init\_size(a,\ init\_size)\ do\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\ \ void\ **a\_ptr\ =\ (void\ **)\&(a);\ \(\backslash\)}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\ \ size\_t\ size\ =\ sizeof(*(a))\ *\ (init\_size)\ +\ sizeof(vrna\_array\_header\_t);\ \(\backslash\)}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\ \ vrna\_array\_header\_t\ *h\ =\ (void\ *)vrna\_alloc(size);\ \(\backslash\)}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\ \ h-\/>num\ \ \ \ \ \ \ \ \ \ \ =\ 0;\ \(\backslash\)}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\ \ h-\/>size\ \ \ \ \ \ \ \ \ \ =\ init\_size;\ \(\backslash\)}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\ \ *a\_ptr\ \ \ \ \ \ \ \ \ \ \ =\ (void\ *)(h\ +\ 1);\ \(\backslash\)}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\}\ while\ (0)}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ vrna\_array\_init(a)\ \ vrna\_array\_init\_size(a,\ VRNA\_ARRAY\_GROW\_FORMULA(0));}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ vrna\_array\_free(a)\ do\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\ \ vrna\_array\_header\_t\ *h\ =\ VRNA\_ARRAY\_HEADER(a);\ \(\backslash\)}}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\ \ free(h);\ \(\backslash\)}}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\}\ while\ (0)}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ vrna\_array\_append(a,\ item)\ do\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\ \ if\ (vrna\_array\_capacity(a)\ <\ vrna\_array\_size(a)\ +\ 1)\ \(\backslash\)}}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\ \ \ \ vrna\_array\_grow(a,\ 0);\ \(\backslash\)}}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\ \ (a)[vrna\_array\_size(a)++]\ =\ (item);\ \(\backslash\)}}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\}\ while\ (0)}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#define\ vrna\_array\_grow(a,\ min\_capacity)\ do\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\ \ size\_t\ new\_capacity\ =\ VRNA\_ARRAY\_GROW\_FORMULA(vrna\_array\_capacity(a));\ \(\backslash\)}}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\ \ if\ (new\_capacity\ <\ (min\_capacity))\ \(\backslash\)}}
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\ \ \ \ new\_capacity\ =\ (min\_capacity);\ \(\backslash\)}}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\ \ vrna\_array\_set\_capacity(a,\ new\_capacity);\ \(\backslash\)}}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\}\ while\ (0)}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

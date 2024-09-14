@@ -1,0 +1,83 @@
+\hypertarget{RNAstruct_8h_source}{}\doxysection{RNAstruct.\+h}
+\label{RNAstruct_8h_source}\index{ViennaRNA/RNAstruct.h@{ViennaRNA/RNAstruct.h}}
+\mbox{\hyperlink{RNAstruct_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VIENNA\_RNA\_PACKAGE\_RNASTRUCT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VIENNA\_RNA\_PACKAGE\_RNASTRUCT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ VRNA\_WARN\_DEPRECATED}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#\ if\ defined(\_\_clang\_\_)}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#\ \ define\ DEPRECATED(func,\ msg)\ func\ \_\_attribute\_\_\ ((deprecated("{}"{}},\ msg)))}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#\ elif\ defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#\ \ define\ DEPRECATED(func,\ msg)\ func\ \_\_attribute\_\_\ ((deprecated(msg)))}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#\ else}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#\ \ define\ DEPRECATED(func,\ msg)\ func}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#\ endif}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#\ define\ DEPRECATED(func,\ msg)\ func}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ STRUC\ \ \ \ \ 2000}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00052\ DEPRECATED(\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{group__struct__utils__deprecated_gab3fcb3ff7e9bcd86cd969093bdae0c8d}{b2HIT}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *structure),}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Use\ vrna\_db\_to\_tree\_string()\ instead!"{}});\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Full\ \ \ -\/>\ HIT\ \ \ \ [incl.\ root]\ */}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00066\ DEPRECATED(\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{group__struct__utils__deprecated_gaab548531941f27c91108b89a8f570f95}{b2C}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *structure),}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Use\ vrna\_db\_to\_tree\_string()\ instead!"{}});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Full\ \ \ -\/>\ Coarse\ [incl.\ root]\ */}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00081\ DEPRECATED(\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{group__struct__utils__deprecated_ga2baf1c3a2182f21a4384107df979cd67}{b2Shapiro}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *structure),}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Use\ vrna\_db\_to\_tree\_string()\ instead!"{}});\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Full\ -\/>\ weighted\ Shapiro\ [i.r.]\ */}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00091\ DEPRECATED(\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{group__struct__utils__deprecated_gaf3b80d1fe7485e69c6eb85965613a145}{add\_root}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *structure),}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ \{Tree\}\ -\/>\ (\{Tree\}R)\ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00102\ DEPRECATED(\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{group__struct__utils__deprecated_ga04c7268dcc798f92290604a762c3ddf8}{expand\_Shapiro}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *coarse),}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Use\ vrna\_db\_to\_tree\_string()\ instead!"{}});}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{comment}{/*\ add\ S\ for\ stacks\ to\ coarse\ struct\ */}}
+\DoxyCodeLine{00114\ DEPRECATED(\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{group__struct__utils__deprecated_ga6eea10bca410a57aaffcdea7bcf89bda}{expand\_Full}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *structure),}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Use\ vrna\_db\_to\_tree\_string()\ instead!"{}});\ \ \ \ \ \ \ \textcolor{comment}{/*\ Full\ \ \ -\/>\ FFull\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00125\ DEPRECATED(\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{group__struct__utils__deprecated_gad67c8ef662c147c5f55da3c233376e59}{unexpand\_Full}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *ffull),}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Use\ vrna\_tree\_string\_to\_db()\ instead!"{}});\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ FFull\ \ -\/>\ Full\ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00135\ DEPRECATED(\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{group__struct__utils__deprecated_ga4921d8967002f8e6e30a8ac046bbf557}{unweight}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *wcoarse),}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Use\ vrna\_tree\_string\_unweight()\ instead!"{}});\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ remove\ weights\ from\ coarse\ struct\ */}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00148\ DEPRECATED(\textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{group__struct__utils__deprecated_ga1054c4477d53b31d79d4cb132100e87a}{unexpand\_aligned\_F}}(\textcolor{keywordtype}{char}\ *align[2]),}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00161\ DEPRECATED(\textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{group__struct__utils__deprecated_ga3c79042e6bf6f01706bf30ec9e69e8ac}{parse\_structure}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *structure),}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}});\ \ \textcolor{comment}{/*\ make\ structure\ statistics\ */}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00169\ DEPRECATED(\textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__struct__utils__deprecated_ga3f31e0e48125601bfa57b52f8b038e8e}{loop\_size}}[STRUC],}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}});\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ loop\ sizes\ of\ a\ structure\ */}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00175\ DEPRECATED(\textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__struct__utils__deprecated_ga8218c0d581a3fba2a1a56a196abe19a5}{helix\_size}}[STRUC],}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}});\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ helix\ sizes\ of\ a\ structure\ */}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00181\ DEPRECATED(\textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__struct__utils__deprecated_gaef14e2f8ab3f61e8e659ba6b9003b08a}{loop\_degree}}[STRUC],}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}});\ \ \ \ \ \ \ \textcolor{comment}{/*\ loop\ degrees\ of\ a\ structure\ */}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00187\ DEPRECATED(\textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__struct__utils__deprecated_ga439fcb9f8d4f9f4d2227fde5fbfecb30}{loops}},}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ n\ of\ loops\ and\ stacks\ */}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00193\ DEPRECATED(\textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__struct__utils__deprecated_gadd2f952597e02d66e1116a9d11d252d6}{unpaired}},}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00199\ DEPRECATED(\textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__struct__utils__deprecated_ga6341cbb704924824e0236c1dce791032}{pairs}},}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}});\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ n\ of\ unpaired\ digits\ and\ pairs\ */}}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

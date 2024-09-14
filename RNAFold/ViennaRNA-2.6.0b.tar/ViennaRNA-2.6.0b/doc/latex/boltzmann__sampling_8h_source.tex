@@ -1,0 +1,168 @@
+\hypertarget{boltzmann__sampling_8h_source}{}\doxysection{boltzmann\+\_\+sampling.\+h}
+\label{boltzmann__sampling_8h_source}\index{ViennaRNA/boltzmann\_sampling.h@{ViennaRNA/boltzmann\_sampling.h}}
+\mbox{\hyperlink{boltzmann__sampling_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VIENNA\_RNA\_PACKAGE\_BOLTZMANN\_SAMPLING\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VIENNA\_RNA\_PACKAGE\_BOLTZMANN\_SAMPLING\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ VRNA\_WARN\_DEPRECATED}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#\ if\ defined(DEPRECATED)}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#\ \ \ undef\ DEPRECATED}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#\ endif}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#\ if\ defined(\_\_clang\_\_)}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#\ \ define\ DEPRECATED(func,\ msg)\ func\ \_\_attribute\_\_\ ((deprecated("{}"{}},\ msg)))}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#\ elif\ defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#\ \ define\ DEPRECATED(func,\ msg)\ func\ \_\_attribute\_\_\ ((deprecated(msg)))}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#\ else}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#\ \ define\ DEPRECATED(func,\ msg)\ func}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#\ endif}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#\ define\ DEPRECATED(func,\ msg)\ func}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ VRNA\_PBACKTRACK\_DEFAULT\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ VRNA\_PBACKTRACK\_NON\_REDUNDANT\ \ \ 1}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{group__subopt__stochbt_ga4e064a63f93476c9f1dba0e207009a0e}{vrna\_bs\_result\_f}})(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \ *structure,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ *data);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ DEPRECATED(\textcolor{keyword}{typedef}\ \textcolor{keywordtype}{void}\ (vrna\_boltzmann\_sampling\_callback)(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \ *structure,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ *data),}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Use\ vrna\_bs\_result\_f\ instead!"{}});}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }vrna\_pbacktrack\_memory\_s\ *\mbox{\hyperlink{group__subopt__stochbt_gaa59c30efbed96bf9aaf8005584c72e63}{vrna\_pbacktrack\_mem\_t}};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{fold__compound_8h}{ViennaRNA/fold\_compound.h}}>}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00128\ \textcolor{keywordtype}{char}\ *}
+\DoxyCodeLine{00129\ \mbox{\hyperlink{group__subopt__stochbt_ga72ebbe45bcbce147a12f27f62b38db78}{vrna\_pbacktrack5}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ *fc,}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ length);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00177\ \textcolor{keywordtype}{char}\ **}
+\DoxyCodeLine{00178\ \mbox{\hyperlink{group__subopt__stochbt_ga30c3ddff868c44eecfdb07d99a2422ba}{vrna\_pbacktrack5\_num}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ *fc,}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ num\_samples,}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ length,}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ options);}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00233\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00234\ \mbox{\hyperlink{group__subopt__stochbt_ga0849bf555110d546ac81bc2aefdfe507}{vrna\_pbacktrack5\_cb}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ *fc,}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ num\_samples,}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ length,}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__subopt__stochbt_ga4e064a63f93476c9f1dba0e207009a0e}{vrna\_bs\_result\_f}}\ \ cb,}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *data,}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ options);}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00316\ \textcolor{keywordtype}{char}\ **}
+\DoxyCodeLine{00317\ \mbox{\hyperlink{group__subopt__stochbt_gac5d7065196975b803daeb4e094ba1cb9}{vrna\_pbacktrack5\_resume}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ *vc,}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ num\_samples,}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ length,}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__subopt__stochbt_gaa59c30efbed96bf9aaf8005584c72e63}{vrna\_pbacktrack\_mem\_t}}\ *nr\_mem,}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ options);}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00401\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00402\ \mbox{\hyperlink{group__subopt__stochbt_ga1c4cd7156224ef96147b22c5f7c4ddc3}{vrna\_pbacktrack5\_resume\_cb}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ *fc,}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ num\_samples,}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ length,}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__subopt__stochbt_ga4e064a63f93476c9f1dba0e207009a0e}{vrna\_bs\_result\_f}}\ cb,}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *data,}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__subopt__stochbt_gaa59c30efbed96bf9aaf8005584c72e63}{vrna\_pbacktrack\_mem\_t}}\ \ \ \ \ \ \ \ \ \ \ \ *nr\_mem,}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ options);}
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00410\ }
+\DoxyCodeLine{00438\ \textcolor{keywordtype}{char}\ *}
+\DoxyCodeLine{00439\ \mbox{\hyperlink{group__subopt__stochbt_ga594844ac73c4e66e00d6791b31540634}{vrna\_pbacktrack}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ *fc);}
+\DoxyCodeLine{00440\ }
+\DoxyCodeLine{00441\ }
+\DoxyCodeLine{00484\ \textcolor{keywordtype}{char}\ **}
+\DoxyCodeLine{00485\ \mbox{\hyperlink{group__subopt__stochbt_ga596ed9bcd86f629a7c7c59c58b297db5}{vrna\_pbacktrack\_num}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ *fc,}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ num\_samples,}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ options);}
+\DoxyCodeLine{00488\ }
+\DoxyCodeLine{00489\ }
+\DoxyCodeLine{00537\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00538\ \mbox{\hyperlink{group__subopt__stochbt_gad6d1de3371ebe6fd1db3c318e50e6488}{vrna\_pbacktrack\_cb}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ *fc,}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ num\_samples,}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__subopt__stochbt_ga4e064a63f93476c9f1dba0e207009a0e}{vrna\_bs\_result\_f}}\ cb,}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *data,}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ options);}
+\DoxyCodeLine{00543\ }
+\DoxyCodeLine{00544\ }
+\DoxyCodeLine{00615\ \textcolor{keywordtype}{char}\ **}
+\DoxyCodeLine{00616\ \mbox{\hyperlink{group__subopt__stochbt_gae175129ece546fe7c092f27072e039d1}{vrna\_pbacktrack\_resume}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ \ *fc,}
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ num\_samples,}
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__subopt__stochbt_gaa59c30efbed96bf9aaf8005584c72e63}{vrna\_pbacktrack\_mem\_t}}\ \ *nr\_mem,}
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ options);}
+\DoxyCodeLine{00620\ }
+\DoxyCodeLine{00621\ }
+\DoxyCodeLine{00695\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00696\ \mbox{\hyperlink{group__subopt__stochbt_gabaaec8b80274f8e7b86d2b2226469d9f}{vrna\_pbacktrack\_resume\_cb}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ *fc,}
+\DoxyCodeLine{00697\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ num\_samples,}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__subopt__stochbt_ga4e064a63f93476c9f1dba0e207009a0e}{vrna\_bs\_result\_f}}\ \ cb,}
+\DoxyCodeLine{00699\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *data,}
+\DoxyCodeLine{00700\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__subopt__stochbt_gaa59c30efbed96bf9aaf8005584c72e63}{vrna\_pbacktrack\_mem\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ *nr\_mem,}
+\DoxyCodeLine{00701\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ options);}
+\DoxyCodeLine{00702\ }
+\DoxyCodeLine{00703\ }
+\DoxyCodeLine{00704\ }
+\DoxyCodeLine{00705\ }
+\DoxyCodeLine{00706\ }
+\DoxyCodeLine{00707\ }
+\DoxyCodeLine{00708\ }
+\DoxyCodeLine{00709\ }
+\DoxyCodeLine{00742\ \textcolor{keywordtype}{char}\ *}
+\DoxyCodeLine{00743\ \mbox{\hyperlink{group__subopt__stochbt_ga4ae8e7ce0b1e6e45569d183af038c392}{vrna\_pbacktrack\_sub}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ *fc,}
+\DoxyCodeLine{00744\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ start,}
+\DoxyCodeLine{00745\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ end);}
+\DoxyCodeLine{00746\ }
+\DoxyCodeLine{00747\ }
+\DoxyCodeLine{00793\ \textcolor{keywordtype}{char}\ **}
+\DoxyCodeLine{00794\ \mbox{\hyperlink{group__subopt__stochbt_ga21000927ce498a1b17dff92bda4d996f}{vrna\_pbacktrack\_sub\_num}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ *fc,}
+\DoxyCodeLine{00795\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ num\_samples,}
+\DoxyCodeLine{00796\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ start,}
+\DoxyCodeLine{00797\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ end,}
+\DoxyCodeLine{00798\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ options);}
+\DoxyCodeLine{00799\ }
+\DoxyCodeLine{00800\ }
+\DoxyCodeLine{00851\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00852\ \mbox{\hyperlink{group__subopt__stochbt_ga6a077de16b2d95dfd9c8f06ddef092b5}{vrna\_pbacktrack\_sub\_cb}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ *fc,}
+\DoxyCodeLine{00853\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ num\_samples,}
+\DoxyCodeLine{00854\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ start,}
+\DoxyCodeLine{00855\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ end,}
+\DoxyCodeLine{00856\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__subopt__stochbt_ga4e064a63f93476c9f1dba0e207009a0e}{vrna\_bs\_result\_f}}\ \ cb,}
+\DoxyCodeLine{00857\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *data,}
+\DoxyCodeLine{00858\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ options);}
+\DoxyCodeLine{00859\ }
+\DoxyCodeLine{00860\ }
+\DoxyCodeLine{00936\ \textcolor{keywordtype}{char}\ **}
+\DoxyCodeLine{00937\ \mbox{\hyperlink{group__subopt__stochbt_gae11283e73b3bbf4b4097ef70bbaef195}{vrna\_pbacktrack\_sub\_resume}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ *vc,}
+\DoxyCodeLine{00938\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ num\_samples,}
+\DoxyCodeLine{00939\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ start,}
+\DoxyCodeLine{00940\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ end,}
+\DoxyCodeLine{00941\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__subopt__stochbt_gaa59c30efbed96bf9aaf8005584c72e63}{vrna\_pbacktrack\_mem\_t}}\ *nr\_mem,}
+\DoxyCodeLine{00942\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ options);}
+\DoxyCodeLine{00943\ }
+\DoxyCodeLine{00944\ }
+\DoxyCodeLine{01023\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{01024\ \mbox{\hyperlink{group__subopt__stochbt_gaab6ee5d51be1723a2dda22f758da882c}{vrna\_pbacktrack\_sub\_resume\_cb}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ *fc,}
+\DoxyCodeLine{01025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ num\_samples,}
+\DoxyCodeLine{01026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ start,}
+\DoxyCodeLine{01027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ end,}
+\DoxyCodeLine{01028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__subopt__stochbt_ga4e064a63f93476c9f1dba0e207009a0e}{vrna\_bs\_result\_f}}\ cb,}
+\DoxyCodeLine{01029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *data,}
+\DoxyCodeLine{01030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__subopt__stochbt_gaa59c30efbed96bf9aaf8005584c72e63}{vrna\_pbacktrack\_mem\_t}}\ \ \ \ \ \ \ \ \ \ \ \ *nr\_mem,}
+\DoxyCodeLine{01031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ options);}
+\DoxyCodeLine{01032\ }
+\DoxyCodeLine{01033\ }
+\DoxyCodeLine{01042\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{01043\ \mbox{\hyperlink{group__subopt__stochbt_gae64fbdef59e7f503d7e920aac279212b}{vrna\_pbacktrack\_mem\_free}}(\mbox{\hyperlink{group__subopt__stochbt_gaa59c30efbed96bf9aaf8005584c72e63}{vrna\_pbacktrack\_mem\_t}}\ s);}
+\DoxyCodeLine{01044\ }
+\DoxyCodeLine{01045\ }
+\DoxyCodeLine{01049\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

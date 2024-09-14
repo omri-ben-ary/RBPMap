@@ -1,0 +1,75 @@
+\hypertarget{soft__special_8h_source}{}\doxysection{soft\+\_\+special.\+h}
+\label{soft__special_8h_source}\index{ViennaRNA/constraints/soft\_special.h@{ViennaRNA/constraints/soft\_special.h}}
+\mbox{\hyperlink{soft__special_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VIENNA\_RNA\_PACKAGE\_CONSTRAINTS\_SOFT\_SPECIAL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VIENNA\_RNA\_PACKAGE\_CONSTRAINTS\_SOFT\_SPECIAL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structvrna__sc__mod__param__s}{vrna\_sc\_mod\_param\_s}}\ *\mbox{\hyperlink{group__modified__bases_ga05e46c6a7c7040b2c4236b218dadb0e5}{vrna\_sc\_mod\_param\_t}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00050\ \mbox{\hyperlink{structvrna__sc__mod__param__s}{vrna\_sc\_mod\_param\_t}}}
+\DoxyCodeLine{00051\ \mbox{\hyperlink{group__modified__bases_gae14753463c572d712363590b0b7e9a9a}{vrna\_sc\_mod\_read\_from\_jsonfile}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *filename,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__model__details_structvrna__md__s}{vrna\_md\_t}}\ \ *md);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00065\ \mbox{\hyperlink{structvrna__sc__mod__param__s}{vrna\_sc\_mod\_param\_t}}}
+\DoxyCodeLine{00066\ \mbox{\hyperlink{group__modified__bases_ga73651701673a35080ff60ee156596da1}{vrna\_sc\_mod\_read\_from\_json}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *json,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__model__details_structvrna__md__s}{vrna\_md\_t}}\ \ *md);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00077\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00078\ \mbox{\hyperlink{group__modified__bases_ga0e76e3dee44ab51c6758a5e2275f8bad}{vrna\_sc\_mod\_parameters\_free}}(\mbox{\hyperlink{structvrna__sc__mod__param__s}{vrna\_sc\_mod\_param\_t}}\ params);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00097\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00098\ \mbox{\hyperlink{group__modified__bases_ga48cef1af67413cc9bb4c82d6bc4010ad}{vrna\_sc\_mod\_json}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ *fc,}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ \ *json,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ *modification\_sites);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00120\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00121\ \mbox{\hyperlink{group__modified__bases_ga336fd68b654e55350757a10382a79998}{vrna\_sc\_mod\_jsonfile}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ *fc,}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ \ *json\_file,}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ *modification\_sites);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00146\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00147\ \mbox{\hyperlink{group__modified__bases_gac353e59d5f3176f5c1e59a93cc2b4d05}{vrna\_sc\_mod}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ \ \ \ \ *fc,}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structvrna__sc__mod__param__s}{vrna\_sc\_mod\_param\_t}}\ params,}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ *modification\_sites);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00164\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00165\ \mbox{\hyperlink{group__modified__bases_gaa8148e44fa6bf5ab56749d5b9eaaa824}{vrna\_sc\_mod\_m6A}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ *fc,}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ *modification\_sites);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00181\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00182\ \mbox{\hyperlink{group__modified__bases_ga825498cec9080e1317a1fc53f8938df0}{vrna\_sc\_mod\_pseudouridine}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ *fc,}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ *modification\_sites);}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00198\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00199\ \mbox{\hyperlink{group__modified__bases_ga9aed533c8f796d327f46bb7689f55e3e}{vrna\_sc\_mod\_inosine}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ *fc,}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ *modification\_sites);}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00215\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00216\ \mbox{\hyperlink{group__modified__bases_gaf5bde5cbf126e786c3eed83ee187edc2}{vrna\_sc\_mod\_7DA}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ \ *fc,}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ *modification\_sites);}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00232\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00233\ \mbox{\hyperlink{group__modified__bases_ga30ef3a7938ef088a9e74d58ada4c4e4c}{vrna\_sc\_mod\_purine}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ *fc,}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ *modification\_sites);}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00250\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00251\ \mbox{\hyperlink{group__modified__bases_gadf714a96b81a1047003cbcd8fe3b979b}{vrna\_sc\_mod\_dihydrouridine}}(\mbox{\hyperlink{group__fold__compound_structvrna__fc__s}{vrna\_fold\_compound\_t}}\ *fc,}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ *modification\_sites);}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00258\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,158 @@
+\hypertarget{layouts_8h_source}{}\doxysection{layouts.\+h}
+\label{layouts_8h_source}\index{ViennaRNA/plotting/layouts.h@{ViennaRNA/plotting/layouts.h}}
+\mbox{\hyperlink{layouts_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VIENNA\_RNA\_PACKAGE\_PLOT\_LAYOUTS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VIENNA\_RNA\_PACKAGE\_PLOT\_LAYOUTS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ VRNA\_WARN\_DEPRECATED}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#\ if\ defined(\_\_clang\_\_)}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#\ \ define\ DEPRECATED(func,\ msg)\ func\ \_\_attribute\_\_\ ((deprecated("{}"{}},\ msg)))}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#\ elif\ defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#\ \ define\ DEPRECATED(func,\ msg)\ func\ \_\_attribute\_\_\ ((deprecated(msg)))}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#\ else}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#\ \ define\ DEPRECATED(func,\ msg)\ func}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#\ endif}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#\ define\ DEPRECATED(func,\ msg)\ func}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{group__plot__layout__utils_structvrna__plot__layout__s}{vrna\_plot\_layout\_s}}\ \mbox{\hyperlink{group__plot__layout__utils_structvrna__plot__layout__s}{vrna\_plot\_layout\_t}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{datastructures_2basic_8h}{ViennaRNA/datastructures/basic.h}}>}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#ifdef\ VRNA\_WITH\_NAVIEW\_LAYOUT}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <ViennaRNA/plotting/naview/naview.h>}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RNAturtle_8h}{ViennaRNA/plotting/RNApuzzler/RNAturtle.h}}"{}}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RNApuzzler_8h}{ViennaRNA/plotting/RNApuzzler/RNApuzzler.h}}"{}}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ VRNA\_PLOT\_TYPE\_SIMPLE\ \ \ \ \ 0}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ VRNA\_PLOT\_TYPE\_NAVIEW\ \ \ \ \ 1}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ VRNA\_PLOT\_TYPE\_CIRCULAR\ \ \ 2}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ VRNA\_PLOT\_TYPE\_TURTLE\ \ 3}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ VRNA\_PLOT\_TYPE\_PUZZLER\ \ 4}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#ifdef\ VRNA\_WITH\_NAVIEW\_LAYOUT}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#\ define\ VRNA\_PLOT\_TYPE\_DEFAULT\ \ VRNA\_PLOT\_TYPE\_NAVIEW}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#\ define\ VRNA\_PLOT\_TYPE\_DEFAULT\ \ VRNA\_PLOT\_TYPE\_PUZZLER}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{group__plot__layout__utils_structvrna__plot__layout__s}{vrna\_plot\_layout\_s}}\ \{}
+\DoxyCodeLine{00099\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ length;}
+\DoxyCodeLine{00100\ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ *x;}
+\DoxyCodeLine{00101\ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ *y;}
+\DoxyCodeLine{00102\ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ *arcs;}
+\DoxyCodeLine{00103\ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ bbox[4];}
+\DoxyCodeLine{00104\ \};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00133\ \mbox{\hyperlink{group__plot__layout__utils_structvrna__plot__layout__s}{vrna\_plot\_layout\_t}}\ *}
+\DoxyCodeLine{00134\ \mbox{\hyperlink{group__plot__layout__utils_ga27768f2479dffe0c01edf28486da840e}{vrna\_plot\_layout}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \ \ *structure,}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ plot\_type);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00153\ \mbox{\hyperlink{group__plot__layout__utils_structvrna__plot__layout__s}{vrna\_plot\_layout\_t}}\ *}
+\DoxyCodeLine{00154\ \mbox{\hyperlink{group__plot__layout__utils_ga1818430e3f62a9026318fd7f4e5cee4c}{vrna\_plot\_layout\_simple}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *structure);}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#ifdef\ VRNA\_WITH\_NAVIEW\_LAYOUT}}
+\DoxyCodeLine{00173\ \mbox{\hyperlink{group__plot__layout__utils_structvrna__plot__layout__s}{vrna\_plot\_layout\_t}}\ *}
+\DoxyCodeLine{00174\ vrna\_plot\_layout\_naview(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *structure);}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00192\ \mbox{\hyperlink{group__plot__layout__utils_structvrna__plot__layout__s}{vrna\_plot\_layout\_t}}\ *}
+\DoxyCodeLine{00193\ \mbox{\hyperlink{group__plot__layout__utils_gac3332324c4fdb299c573cf15c7d14458}{vrna\_plot\_layout\_circular}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *structure);}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00211\ \mbox{\hyperlink{group__plot__layout__utils_structvrna__plot__layout__s}{vrna\_plot\_layout\_t}}\ *}
+\DoxyCodeLine{00212\ \mbox{\hyperlink{group__plot__layout__utils_ga0896374afd1bbc6086affc636fbd9098}{vrna\_plot\_layout\_turtle}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *structure);}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00230\ \mbox{\hyperlink{group__plot__layout__utils_structvrna__plot__layout__s}{vrna\_plot\_layout\_t}}\ *}
+\DoxyCodeLine{00231\ \mbox{\hyperlink{group__plot__layout__utils_ga1ac934431fd36f6b82719d6898e1de43}{vrna\_plot\_layout\_puzzler}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *structure,}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__plot__layout__utils_structvrna__plot__options__puzzler__t}{vrna\_plot\_options\_puzzler\_t}}\ \ *options);}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00244\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00245\ \mbox{\hyperlink{group__plot__layout__utils_ga996128730020a2d7a7368b4248195931}{vrna\_plot\_layout\_free}}(\mbox{\hyperlink{group__plot__layout__utils_structvrna__plot__layout__s}{vrna\_plot\_layout\_t}}\ *layout);}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00291\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00292\ \mbox{\hyperlink{group__plot__layout__utils_ga2e2adbef0283a8ff2dfe5284eb1f4a6a}{vrna\_plot\_coords}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *structure,}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ **x,}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ **y,}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ plot\_type);}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00317\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00318\ \mbox{\hyperlink{group__plot__layout__utils_gaccd6a87cb324b7d680e5dd93e112738b}{vrna\_plot\_coords\_pt}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{short}\ *pt,}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ **x,}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ **y,}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ plot\_type);}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00356\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00357\ \mbox{\hyperlink{group__plot__layout__utils_gaea0dada4d0113d16d4890bc0937292e6}{vrna\_plot\_coords\_simple}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \ *structure,}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ **x,}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ **y);}
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00380\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00381\ \mbox{\hyperlink{group__plot__layout__utils_ga76788091848e73cfb24b31536e22b7dd}{vrna\_plot\_coords\_simple\_pt}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{short}\ \ *pt,}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ **x,}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ **y);}
+\DoxyCodeLine{00384\ }
+\DoxyCodeLine{00385\ }
+\DoxyCodeLine{00416\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00417\ \mbox{\hyperlink{group__plot__layout__utils_ga47ff1fd92e9658361a758fdb03122911}{vrna\_plot\_coords\_circular}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \ *structure,}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ **x,}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ **y);}
+\DoxyCodeLine{00420\ }
+\DoxyCodeLine{00421\ }
+\DoxyCodeLine{00440\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00441\ \mbox{\hyperlink{group__plot__layout__utils_gaeec80faa235f3ca489bc5e50adc41460}{vrna\_plot\_coords\_circular\_pt}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{short}\ \ *pt,}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ **x,}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ **y);}
+\DoxyCodeLine{00444\ }
+\DoxyCodeLine{00445\ }
+\DoxyCodeLine{00451\ \textcolor{preprocessor}{\#ifndef\ VRNA\_DISABLE\_BACKWARD\_COMPATIBILITY}}
+\DoxyCodeLine{00452\ }
+\DoxyCodeLine{00463\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00464\ \ \ \textcolor{keywordtype}{float}\ X;\ \ \textcolor{comment}{/*\ X\ coords\ */}}
+\DoxyCodeLine{00465\ \ \ \textcolor{keywordtype}{float}\ Y;\ \ \textcolor{comment}{/*\ Y\ coords\ */}}
+\DoxyCodeLine{00466\ \}\ \mbox{\hyperlink{group__plotting__utils__deprecated_structCOORDINATE}{COORDINATE}};}
+\DoxyCodeLine{00467\ }
+\DoxyCodeLine{00468\ }
+\DoxyCodeLine{00481\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__plotting__utils__deprecated_ga5964c4581431b098b80027d6e14dcdd4}{rna\_plot\_type}};}
+\DoxyCodeLine{00482\ }
+\DoxyCodeLine{00483\ }
+\DoxyCodeLine{00497\ DEPRECATED(\textcolor{keywordtype}{int}}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__plotting__utils__deprecated_gaf4b9173e7d3fd361c3c85e6def194123}{simple\_xy\_coordinates}}(\textcolor{keywordtype}{short}\ \ *pair\_table,}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ *X,}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ *Y),}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Use\ vrna\_plot\_coords\_simple\_pt()\ instead!"{}});}
+\DoxyCodeLine{00502\ }
+\DoxyCodeLine{00503\ }
+\DoxyCodeLine{00526\ DEPRECATED(\textcolor{keywordtype}{int}}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__plotting__utils__deprecated_gac4ea13d35308f09940178d2b05a248c2}{simple\_circplot\_coordinates}}(\textcolor{keywordtype}{short}\ \ *pair\_table,}
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ *x,}
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ *y),}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Use\ vrna\_plot\_coords\_circular\_pt()\ instead!"{}});}
+\DoxyCodeLine{00531\ }
+\DoxyCodeLine{00532\ }
+\DoxyCodeLine{00537\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00538\ }
+\DoxyCodeLine{00539\ }
+\DoxyCodeLine{00540\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

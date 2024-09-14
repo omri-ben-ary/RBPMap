@@ -1,0 +1,13 @@
+digraph "ViennaRNA/utils/strings.h"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="ViennaRNA/utils/strings.h",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="General utility- and helper-functions for RNA sequence and structure strings used throughout the Vien..."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="ViennaRNA/string_utils.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$string__utils_8h.html",tooltip="Use ViennaRNA/utils/strings.h instead."];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="ViennaRNA/utils.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$utils_8h.html",tooltip="Use ViennaRNA/utils/basic.h instead."];
+}

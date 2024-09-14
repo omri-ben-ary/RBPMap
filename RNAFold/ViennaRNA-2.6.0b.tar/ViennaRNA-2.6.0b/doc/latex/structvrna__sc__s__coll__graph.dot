@@ -1,0 +1,13 @@
+digraph "vrna_sc_s"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="vrna_sc_s",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="The soft constraints data structure."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" bp_storage" ];
+  Node2 [label="vrna_sc_bp_storage_t",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structvrna__sc__bp__storage__t.html",tooltip="A base pair constraint."];
+  Node3 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" bt" ];
+  Node3 [label="vrna_basepair_s",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$group__data__structures.html#structvrna__basepair__s",tooltip="Base pair data structure used in subopt.c."];
+}

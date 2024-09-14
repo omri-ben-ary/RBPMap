@@ -1,0 +1,13 @@
+digraph "ViennaRNA/landscape/paths.h"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="ViennaRNA/landscape\l/paths.h",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="API for computing (optimal) (re-)folding paths between secondary structures."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="ViennaRNA/landscape\l/findpath.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$landscape_2findpath_8h.html",tooltip="A breadth-first search heuristic for optimal direct folding paths."];
+  Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="ViennaRNA/findpath.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$findpath_8h.html",tooltip="Use ViennaRNA/landscape/findpath.h instead."];
+}

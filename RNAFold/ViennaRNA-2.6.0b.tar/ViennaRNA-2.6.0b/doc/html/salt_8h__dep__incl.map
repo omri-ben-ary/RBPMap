@@ -1,0 +1,9 @@
+<map id="ViennaRNA/params/salt.h" name="ViennaRNA/params/salt.h">
+<area shape="rect" id="node1" title="Functions to compute salt correction." alt="" coords="191,5,365,31"/>
+<area shape="rect" id="node2" href="$hairpin_8h.html" title="Energy evaluation of hairpin loops for MFE and partition function calculations." alt="" coords="86,79,265,104"/>
+<area shape="rect" id="node6" href="$internal_8h.html" title="Energy evaluation of interior loops for MFE and partition function calculations." alt="" coords="289,79,472,104"/>
+<area shape="rect" id="node3" href="$hairpin__loops_8h.html" title="Use ViennaRNA/loops/hairpin.h instead." alt="" coords="5,159,188,185"/>
+<area shape="rect" id="node4" href="$all_8h.html" title="Energy evaluation for MFE and partition function calculations." alt="" coords="213,159,367,185"/>
+<area shape="rect" id="node5" href="$loop__energies_8h.html" title="Use ViennaRNA/loops/all.h instead." alt="" coords="197,240,383,265"/>
+<area shape="rect" id="node7" href="$interior__loops_8h.html" title="Use ViennaRNA/loops/internal.h instead." alt="" coords="392,152,527,192"/>
+</map>
